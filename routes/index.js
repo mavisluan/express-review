@@ -2,23 +2,6 @@
 const express = require('express');
 
 const router = express.Router();
-// Router-level middleware examples
-// use middleware to access req and res objects
-router.use((req, res, next) => {
-    const now = new Date().toString();
-    console.log('current date', now);
-    console.log('req.METHOD', req.method);
-    console.log('req.url', req.url);
-    next(); // without next(), the request will be left hanging
-});
-
-router.use('/json', (req, res, next) => {
-    res.send({
-        path: '/json',
-        message: `When the path matches /json, end the req-res cycle`,
-        result: '/json routes will not load',
-    });
-});
 
 /* GET home page. */
 // RENDER a ejs page (set the view engine in app.js)
