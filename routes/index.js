@@ -26,11 +26,17 @@ router.get('/json', (req, res) => {
     });
 });
 
-// send error message
+// send json with errorMessage property
 router.get('/bad', (req, res) => {
     res.json({
         errorMessage: 'Unable to find the result',
     });
+});
+
+// get params
+router.get('/writers/:writerId/books/:bookId', (req, res) => {
+    console.log('params', req.params); // params { writerId: '007', bookId: '1974' }
+    res.send(req.params);
 });
 
 module.exports = router;
