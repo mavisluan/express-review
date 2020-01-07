@@ -27,3 +27,23 @@
   - next(): run the the next middleware
   - res.send(): end the cycle -> the next middleware/routes will not run
   - Notes: If the middleware does not end the req-res cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+
+## Working with MySQL
+
+- CRUD example: routes -> posts
+
+1. Install mysql package:
+   - Yarn add mysql
+2. Create connection
+   - const mysql = require('mysql')
+   - const db = mysql.createConnection({
+     <br/>&emsp; host: 'localhost',
+     <br/>&emsp; user: 'username',
+     <br/>&emsp; password: 'password'
+     <br/>&emsp; database: 'dbname'
+     <br/>})
+3. Connect
+   - db.connect(err => {
+     <br/>&emsp;if (err) throw err;
+     <br/>&emsp;console.log('MySql Connected');
+     <br/>});
