@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express');
+// load json data
+const fakeUsers = require('../public/fake-users.json');
 
 const router = express.Router();
 // Router-level middleware examples
@@ -28,7 +30,7 @@ router.use('/favorite', (req, res, next) => {
 });
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+    res.send({ users: fakeUsers.results });
 });
 
 router.get(
@@ -63,4 +65,5 @@ router.get('/:userId', (req, res, next) => {
 
     res.send({ userId, message: 'special' });
 });
+
 module.exports = router;
