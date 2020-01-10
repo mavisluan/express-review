@@ -18,6 +18,12 @@
     <br/>&emsp; // Return JSON
     <br/>&emsp;// Full access to rquest & response
     <br/>})
+    - Example: routes -> index.js
+  - Fetch data
+    1.  local data.json or data.js
+        - const fakeUsers = require('../public/fake-members.json');
+        - const fakeMembers = require('../public/fake-members.js');
+    2.  Use axios to fetch data
 
 ## Serving static files
 
@@ -26,6 +32,7 @@
 
 ## Middleware functions
 
+- Example: routes -> users.js
 - Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
 - Middlewares execution
 
@@ -33,7 +40,7 @@
   - No mount path middleware is executed every time the app receives the request
   - Middleware mounted on sepcific path is executed only when the path matches
 
-- 2 ways to end the middleware (Example: routes -> users.js -> /users/favorite routes)
+- 2 ways to end the middleware
   - next(): run the the next middleware
   - res.send(): end the cycle -> the next middleware/routes will not run
   - Notes: If the middleware does not end the req-res cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
