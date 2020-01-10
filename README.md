@@ -9,6 +9,7 @@
 
 - app.METHOD(PATH, HANDLER)
   - METHOD: get, post, put, delete
+    - CRUD example: routes/api/members
   - Access to params, query strings, url parts
   - Express has a router to store routes in separates files and export
   - We can parse incoming data with the Body Parser
