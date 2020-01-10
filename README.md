@@ -41,9 +41,14 @@
   - Middleware mounted on sepcific path is executed only when the path matches
 
 - 2 ways to end the middleware
+
   - next(): run the the next middleware
   - res.send(): end the cycle -> the next middleware/routes will not run
   - Notes: If the middleware does not end the req-res cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+
+- Middlewares Needed for POST or PUT requests (when sending data)
+  1.  express.json() -> recognize the incoming request object as a JSON object
+  2.  express.urlencoded() -> recognize the incoming request object as strings or arrays
 
 ## Working with MySQL
 

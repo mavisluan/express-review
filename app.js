@@ -23,7 +23,10 @@ App-level middleware (bind middleware to the app instance)
     -- is executed every time the app receives the request
 */
 app.use(logger('dev'));
-app.use(express.json()); // -> express.json() parses incoming requests iwht JSON payloads
+// Needed for POST or PUT requests
+// middleware express.json() -> recognize the incoming request object as a JSON object
+app.use(express.json());
+// middleware express.urlencoded() -> recognize the incoming request object as strings or arrays
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); // -> exptress.static() serves static assets such as HTML files, images
