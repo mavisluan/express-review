@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
@@ -31,6 +32,11 @@ router.get('/bad', (req, res) => {
     res.json({
         errorMessage: 'Unable to find the result',
     });
+});
+
+// // send HTML page
+router.get('/petAdoption', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public', 'petAdoption.html'));
 });
 
 // get params
