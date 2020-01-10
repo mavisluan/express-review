@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express');
 // load json data
-const fakeUsers = require('../public/fake-users.json');
+const fakeUsers = require('../public/fake-members.json');
 
 const router = express.Router();
 // Router-level middleware examples
