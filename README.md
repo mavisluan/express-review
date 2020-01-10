@@ -8,6 +8,16 @@
 ## Basic routing
 
 - app.METHOD(PATH, HANDLER)
+  - METHOD: get, post, put, delete
+  - Access to params, query strings, url parts
+  - Express has a router to store routes in separates files and export
+  - We can parse incoming data with the Body Parser
+  - Eg. app.get('/', (req, res) => {  
+    <br/>&emsp; // Fetch from database
+    <br/>&emsp; // Load pages
+    <br/>&emsp; // Return JSON
+    <br/>&emsp;// Full access to rquest & response
+    <br/>})
 
 ## Serving static files
 
